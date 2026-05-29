@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Incharge - Sports Management | College of Engineering Adoor</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>College of Engineering Adoor - Sports Management</h1>
+    <div class="navbar-actions">
+      <span>Sports Incharge Portal</span>
+      <button class="btn-logout" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+  <main class="main-content">
+    <div class="tabs">
+      <button class="tab active" data-tab="stock">Stock Management</button>
+      <button class="tab" data-tab="events">Events Management</button>
+      <button class="tab" data-tab="reports">Reports</button>
+    </div>
+    <section class="section tab-content active" id="tab-stock">
+      <div class="section-header">
+        <h2>Stock (Add/Edit)</h2>
+        <button class="btn btn-primary btn-sm" id="addStockBtn">Add Stock</button>
+      </div>
+      <div id="stockList" class="loading">Loading...</div>
+    </section>
+    <section class="section tab-content" id="tab-events">
+      <div class="section-header">
+        <h2>Events</h2>
+        <button class="btn btn-primary btn-sm" id="addEventBtn">Add Event</button>
+      </div>
+      <div id="eventsList" class="loading">Loading...</div>
+    </section>
+    <section class="section tab-content" id="tab-reports">
+      <div class="section-header">
+        <h2>Reports</h2>
+        <button class="btn btn-primary btn-sm" id="generateReportBtn">Generate Report</button>
+      </div>
+      <div id="reportsList" class="loading">Loading...</div>
+    </section>
+  </main>
+  <div class="modal-overlay" id="stockModal">
+    <div class="modal">
+      <h3 id="stockModalTitle">Add Stock</h3>
+      <form id="stockForm">
+        <input type="hidden" id="stockId" value="">
+        <div class="form-group">
+          <label for="stockCategory">Category</label>
+          <select id="stockCategory" required></select>
+        </div>
+        <div class="form-group">
+          <label for="stockSerial">Serial Number</label>
+          <input type="text" id="stockSerial" required>
+        </div>
+        <div class="form-group">
+          <label for="stockItem">Item</label>
+          <input type="text" id="stockItem" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="stockQuantity">Quantity</label>
+            <input type="number" id="stockQuantity" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label for="stockDamaged">Damaged</label>
+            <input type="number" id="stockDamaged" value="0" min="0">
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancelStockBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-overlay" id="eventModal">
+    <div class="modal">
+      <h3 id="eventModalTitle">Add Event</h3>
+      <form id="eventForm">
+        <input type="hidden" id="eventId" value="">
+        <div class="form-group">
+          <label for="eventTitle">Title</label>
+          <input type="text" id="eventTitle" required>
+        </div>
+        <div class="form-group">
+          <label for="eventDesc">Description</label>
+          <textarea id="eventDesc" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="eventDate">Event Date</label>
+          <input type="date" id="eventDate" required>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancelEventBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="/js/app.js"></script>
+  <script src="/js/sportsIncharge.js"></script>
+</body>
+</html>

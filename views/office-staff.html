@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Office Staff - Sports Management | College of Engineering Adoor</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>College of Engineering Adoor - Sports Management</h1>
+    <div class="navbar-actions">
+      <span>Office Staff Portal</span>
+      <button class="btn-logout" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+  <main class="main-content">
+    <div class="tabs">
+      <button class="tab active" data-tab="stock">Stock</button>
+      <button class="tab" data-tab="events">Events</button>
+      <button class="tab" data-tab="reports">Reports</button>
+    </div>
+    <section class="section tab-content active" id="tab-stock">
+      <div class="section-header">
+        <h2>Stock Information</h2>
+      </div>
+      <div id="stockList" class="loading">Loading...</div>
+    </section>
+    <section class="section tab-content" id="tab-events">
+      <div class="section-header">
+        <h2>Events</h2>
+      </div>
+      <div id="eventsList" class="loading">Loading...</div>
+    </section>
+    <section class="section tab-content" id="tab-reports">
+      <div class="section-header">
+        <h2>Reports (View Only - Add Comment)</h2>
+      </div>
+      <div id="reportsList" class="loading">Loading...</div>
+    </section>
+  </main>
+  <div class="modal-overlay" id="reportViewModal">
+    <div class="modal" style="max-width: 750px; max-height: 90vh; overflow-y: auto;">
+      <h3 id="reportViewTitle">Report</h3>
+      <div id="reportViewContent" class="report-view-body"></div>
+      <hr style="margin: 1rem 0;">
+      <h4>Add Comment</h4>
+      <p class="meta">Comments are visible only to Principal.</p>
+      <form id="commentForm">
+        <input type="hidden" id="commentReportId" value="">
+        <div class="form-group">
+          <label for="commentText">Comment</label>
+          <textarea id="commentText" rows="3" required></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="closeReportViewBtn">Close</button>
+          <button type="submit" class="btn btn-primary">Submit Comment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="/js/app.js"></script>
+  <script src="/js/officeStaff.js"></script>
+</body>
+</html>
