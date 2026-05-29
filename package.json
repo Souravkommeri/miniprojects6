@@ -1,0 +1,24 @@
+{
+  "name": "sports-management-system",
+  "version": "1.0.0",
+  "description": "Sports Management System for College of Engineering Adoor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "init-db": "node database/init.js"
+  },
+  "keywords": [
+    "sports",
+    "management",
+    "college"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.6.2",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}
